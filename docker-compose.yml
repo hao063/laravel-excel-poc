@@ -1,0 +1,15 @@
+version: "2.4"
+
+services:
+  workspace:
+    image: "omtvn/api-finance-v5-alpha"
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: "laravel_excel"
+    working_dir: /var/www/html
+    ports:
+      - "8111:80"
+    volumes:
+      - .:/var/www/html
+    restart: on-failure
